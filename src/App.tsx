@@ -10,9 +10,9 @@ import './styles/design-system.css';
 import './App.css';
 import './components/components.css';
 
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface Document extends AccessRequest {
   // Document extiende AccessRequest, por lo que hereda todas las propiedades
-  // eslint-disable-line @typescript-eslint/no-empty-interface
 }
 
 function App() {

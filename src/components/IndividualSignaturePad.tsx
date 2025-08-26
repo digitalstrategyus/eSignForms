@@ -15,7 +15,7 @@ interface IndividualSignaturePadProps {
 export const IndividualSignaturePad: React.FC<IndividualSignaturePadProps> = ({
   onSignatureComplete,
   onClose,
-  document,
+  document: _document, // eslint-disable-line @typescript-eslint/no-unused-vars
   currentSigner
 }) => {
   const [isDrawing, setIsDrawing] = useState(false);
