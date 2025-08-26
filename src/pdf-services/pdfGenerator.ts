@@ -1,11 +1,11 @@
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
-import type { Signature, AccessRequest, PDFGenerationResult } from './types';
+import type { AccessRequest, PDFGenerationResult } from './types';
 
 export class PDFGeneratorService {
   private static instance: PDFGeneratorService;
   
-  private constructor() {}
+  private constructor() {} // eslint-disable-line @typescript-eslint/no-empty-function
   
   public static getInstance(): PDFGeneratorService {
     if (!PDFGeneratorService.instance) {

@@ -4,7 +4,7 @@ import type { Signature } from '../pdf-services/types';
 interface IndividualSignaturePadProps {
   onSignatureComplete: (signature: Signature) => void;
   onClose: () => void;
-  document: any;
+  document: any; // eslint-disable-line @typescript-eslint/no-unused-vars
   currentSigner: {
     name: string;
     role: string;
