@@ -1,0 +1,932 @@
+/* Document Viewer Styles */
+.document-viewer {
+  position: relative;
+}
+
+.solicitud-info {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.solicitud-info h4 {
+  margin: 0 0 1rem 0;
+  color: #333;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 0.5rem;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.info-item label {
+  font-weight: 600;
+  color: #555;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-item span {
+  color: #333;
+  font-size: 1rem;
+  padding: 0.5rem;
+  background: white;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.person-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.person-name {
+  font-weight: 600;
+  color: #333;
+}
+
+.person-email {
+  font-size: 0.85rem;
+  color: #666;
+  font-family: monospace;
+}
+
+.document-content {
+  position: relative;
+  background: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  min-height: 400px;
+}
+
+.content-text p {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+  color: #333;
+}
+
+.signature-overlay {
+  z-index: 10;
+}
+
+.signature-box {
+  background: rgba(0, 123, 255, 0.1);
+  border: 2px solid #007bff;
+  border-radius: 6px;
+  padding: 0.5rem;
+  min-width: 150px;
+  text-align: center;
+}
+
+.signature-role {
+  font-size: 0.75rem;
+  color: #fff;
+  background: #007bff;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.signature-name {
+  font-weight: 600;
+  color: #007bff;
+  margin-bottom: 0.25rem;
+}
+
+.signature-date {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.signatures-summary {
+  border-top: 2px solid #eee;
+  padding-top: 1.5rem;
+}
+
+.signatures-summary h4 {
+  margin: 0 0 1rem 0;
+  color: #333;
+}
+
+.no-signatures {
+  color: #666;
+  font-style: italic;
+  text-align: center;
+  padding: 1rem;
+}
+
+.signatures-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.signature-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border: 1px solid #e9ecef;
+}
+
+.signature-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.signature-time {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.signature-role-badge {
+  font-size: 0.7rem;
+  color: #fff;
+  background: #28a745;
+  padding: 0.2rem 0.4rem;
+  border-radius: 10px;
+  margin-bottom: 0.25rem;
+  display: inline-block;
+  font-weight: 500;
+}
+
+/* Signature Pad Styles */
+.signature-pad-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.signature-pad-modal {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.signature-pad-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.signature-pad-header h3 {
+  margin: 0;
+  color: #333;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #666;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.close-btn:hover {
+  background-color: #f0f0f0;
+}
+
+.signature-pad-content {
+  padding: 1.5rem;
+}
+
+.signature-progress {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border: 1px solid #e9ecef;
+}
+
+.signature-progress h4 {
+  margin: 0 0 1rem 0;
+  color: #333;
+  text-align: center;
+}
+
+.progress-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.progress-step {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: 2px solid #e9ecef;
+  transition: all 0.3s;
+}
+
+.progress-step.active {
+  border-color: #007bff;
+  background: #e3f2fd;
+}
+
+.progress-step.completed {
+  border-color: #28a745;
+  background: #d4edda;
+}
+
+.step-number {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #6c757d;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.progress-step.active .step-number {
+  background: #007bff;
+}
+
+.progress-step.completed .step-number {
+  background: #28a745;
+}
+
+.step-info {
+  flex: 1;
+}
+
+.step-role {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.step-name {
+  color: #666;
+  font-size: 0.8rem;
+}
+
+.current-signer {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #e3f2fd;
+  border-radius: 6px;
+  border: 1px solid #007bff;
+}
+
+.current-signer h4 {
+  margin: 0 0 0.5rem 0;
+  color: #007bff;
+}
+
+.current-signer p {
+  margin: 0;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.signature-area {
+  margin-top: 1.5rem;
+}
+
+.signature-area label {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.canvas-container {
+  border: 2px dashed #ddd;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: #fafafa;
+}
+
+.signature-canvas {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: white;
+  cursor: crosshair;
+}
+
+.signature-pad-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-top: 1px solid #eee;
+  background: #f8f9fa;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .signature-pad-modal {
+    width: 95%;
+    margin: 1rem;
+  }
+  
+  .signature-pad-actions {
+    flex-direction: column;
+  }
+  
+  .signature-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+/* PDF Generator Styles */
+.pdf-generator-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.pdf-status {
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pdf-status.success {
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  color: #155724;
+}
+
+.pdf-status.error {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+}
+
+.success-header,
+.error-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.success-icon,
+.error-icon {
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+}
+
+.success-text,
+.error-text {
+  font-weight: 600;
+  flex: 1;
+}
+
+.close-btn {
+  background: transparent;
+  border: 1px solid currentColor;
+  color: inherit;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.close-btn:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.download-section,
+.retry-section {
+  text-align: center;
+}
+
+.download-description {
+  margin: 0 0 1rem 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.download-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  transition: background-color 0.2s;
+}
+
+.download-btn:hover {
+  background-color: #0056b3;
+}
+
+.download-info {
+  display: block;
+  font-size: 0.8rem;
+  opacity: 0.7;
+  margin-top: 0.5rem;
+}
+
+.retry-btn {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.retry-btn:hover {
+  background-color: #545b62;
+}
+
+/* History Manager Styles */
+.history-manager {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.history-header h4 {
+  margin: 0;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.history-stats {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.85rem;
+}
+
+.stat-item {
+  color: #666;
+}
+
+.stat-item strong {
+  color: #333;
+}
+
+.history-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid #007bff;
+  color: #007bff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.btn-outline:hover {
+  background: #007bff;
+  color: white;
+}
+
+.btn-danger {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.btn-danger:hover {
+  background: #c82333;
+}
+
+.import-message {
+  padding: 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.import-message.success {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.import-message.error {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.history-info {
+  background: #e3f2fd;
+  border: 1px solid #007bff;
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.history-info .info-text {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #0056b3;
+  line-height: 1.5;
+}
+
+/* Signature Manager Styles */
+.signature-manager-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.signature-manager-modal {
+  background: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.signature-manager-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.signature-manager-header h3 {
+  margin: 0;
+  color: #333;
+}
+
+.signature-manager-content {
+  padding: 1.5rem;
+}
+
+.signature-manager-actions {
+  padding: 1.5rem;
+  border-top: 1px solid #e9ecef;
+  text-align: right;
+}
+
+/* Progress Bar */
+.progress-bar {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.progress-percentage {
+  color: #007bff;
+  font-size: 1.1rem;
+}
+
+.progress-track {
+  height: 8px;
+  background: #e9ecef;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #28a745, #20c997);
+  transition: width 0.3s ease;
+}
+
+/* Signers List */
+.signers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.signer-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  background: white;
+  transition: all 0.2s;
+}
+
+.signer-item.completed {
+  border-color: #28a745;
+  background: #f8fff9;
+}
+
+.signer-item.pending {
+  border-color: #ffc107;
+  background: #fffbf0;
+}
+
+.signer-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.signer-number {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #007bff;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.signer-item.completed .signer-number {
+  background: #28a745;
+}
+
+.signer-item.pending .signer-number {
+  background: #ffc107;
+  color: #333;
+}
+
+.signer-details h4 {
+  margin: 0 0 0.25rem 0;
+  color: #333;
+  font-size: 1rem;
+}
+
+.signer-name {
+  margin: 0 0 0.25rem 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.signer-email {
+  margin: 0;
+  color: #999;
+  font-size: 0.8rem;
+  font-family: monospace;
+}
+
+.signature-status {
+  text-align: center;
+  margin: 0 1rem;
+}
+
+.status-completed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.status-icon {
+  font-size: 1.5rem;
+}
+
+.status-text {
+  font-weight: 600;
+  color: #28a745;
+  font-size: 0.9rem;
+}
+
+.signature-date {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.status-pending {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.status-pending .status-icon {
+  color: #ffc107;
+}
+
+.status-pending .status-text {
+  color: #856404;
+}
+
+.signer-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.btn-sm {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+}
+
+/* Individual Signature Pad */
+.individual-signature {
+  max-width: 600px;
+}
+
+.signer-info {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #e3f2fd;
+  border-radius: 6px;
+  border: 1px solid #007bff;
+}
+
+.signer-info h4 {
+  margin: 0 0 0.5rem 0;
+  color: #333;
+}
+
+.signer-info p {
+  margin: 0.25rem 0;
+}
+
+.signer-email {
+  color: #666;
+  font-family: monospace;
+  font-size: 0.9rem;
+}
+
+.signature-form {
+  margin-bottom: 1.5rem;
+}
+
+.signature-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.signature-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.signature-form input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.signature-form input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+/* Signature Info */
+.signature-info {
+  background: #e3f2fd;
+  border: 1px solid #007bff;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.signature-info .info-text {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #0056b3;
+  line-height: 1.5;
+}
+
+.btn-sm {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid currentColor;
+  color: inherit;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 0.5rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
