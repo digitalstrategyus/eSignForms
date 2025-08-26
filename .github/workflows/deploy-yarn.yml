@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages (Simple)
+name: Deploy to GitHub Pages (Yarn)
 
 on:
   push:
@@ -21,16 +21,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
-      
-      - name: Clear npm cache
-        run: npm cache clean --force
+          cache: 'yarn'
       
       - name: Install dependencies
-        run: npm ci --legacy-peer-deps --force
+        run: yarn install --frozen-lockfile --network-timeout 100000
       
       - name: Build
-        run: DISABLE_ESLINT_PLUGIN=true GENERATE_SOURCEMAP=false npm run build
+        run: DISABLE_ESLINT_PLUGIN=true GENERATE_SOURCEMAP=false yarn build
         env:
           CI: false
           NODE_ENV: production
@@ -39,7 +36,7 @@ jobs:
         uses: actions/configure-pages@v4
       
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@3
         with:
           path: './build'
 
